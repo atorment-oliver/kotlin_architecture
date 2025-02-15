@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  user-service:
+    build: ./user-service
+    ports:
+      - "50051:50051"
+  order-service:
+    build: ./order-service
+    ports:
+      - "50052:50052"
+  notification-service:
+    build: ./notification-service
+    ports:
+      - "50054:50054"
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
